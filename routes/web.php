@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+//Como segundo parametro le podemos pasar props que se van a compartir con todas las vistas
 Route::get('/', function () {
     return inertia('Home');
 });
