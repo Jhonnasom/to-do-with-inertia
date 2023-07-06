@@ -5,7 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>Laravel</title>
-
+        @vitereactrefresh
+        @vite('src/main.jsx')
         @inertiaHead
     </head>
     <body>
