@@ -6,7 +6,9 @@
 
         <title>Laravel</title>
 
+        @inertiaHead
     </head>
-
+    <body>
+    @inertia
     </body>
 </html>
