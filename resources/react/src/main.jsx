@@ -1,6 +1,7 @@
 import { createInertiaApp } from '@inertiajs/react'
 import { createRoot } from 'react-dom/client'
 import {StrictMode} from "react";
+import './index.css'
 import Navigation from "./components/Navigation.jsx";
 
 createInertiaApp({
@@ -15,9 +16,11 @@ createInertiaApp({
                 <App {...props}>
                     {({Component,key,props})=>{
                         return (
-                            <div>
+                            <div className="bg-gray-100 min-h-screen flex">
                                 <Navigation/>
-                                <Component key={key} {...props}/>
+                                <div className="flex-1 bg-white mt-2 rounded-tl-lg shadow-md px-32 py-4">
+                                    <Component key={key} {...props}/>
+                                </div>
                             </div>
                         )
                     }}
