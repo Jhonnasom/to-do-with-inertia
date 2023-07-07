@@ -5,7 +5,7 @@ export default function TextField(
     return (
         <RATextField {...props}>
             <Label>{label}</Label>
-            <Input className='border h-10 rounded p-4 w-full'/>
+            <Input className='border-y-0 h-10 rounded p-4 w-full'/>
             {description && <Text slot="description">{description}</Text>}
             {errorMessage && <Text slot="errorMessage">{errorMessage}</Text>}
         </RATextField>

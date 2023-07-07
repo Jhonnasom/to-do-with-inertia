@@ -4,24 +4,31 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {router} from "@inertiajs/react";
 import Page from '../../components/Page';
 import Button from '../../ui/Button.jsx';
+import Search from "../../components/Search.jsx";
 export default function Index({products}){
     const actionsMarkup=(
         <Button onClick={()=>router.visit('/products/create')}>
             Add Product
         </Button>
     )
+
+    function handleOnchange(e){
+        router.get('/products', {search: e.target.value}, {replace: true, preserveState: true})
+    }
+
+
     return (
         <Page actions={actionsMarkup} title='Products'>
-
+            <Search onChange={handleOnchange} />
             <Table aria-label="Products" className='w-full'>
-                <TableHeader className='border border-gray-200'>
+                <TableHeader className=' border-gray-200'>
                     <Column className='text-left text-sm text-gray-500 font-medium' isRowHeader>Name</Column>
                     <Column className='text-left text-sm text-gray-500 font-medium'>Price</Column>
                     <Column></Column>
                 </TableHeader>
                 <TableBody>
                     {products.data.map((product)=>(
-                        <Row key={product.id} className='border border-gray-200'>
+                        <Row key={product.id} className='p-y-2 border-y-2 border-gray-200'>
                             <Cell className='p-y-4'>{product.name}</Cell>
                             {/*Para poner automaticamente la moneda*/}
                             <Cell className='p-y-4'>
