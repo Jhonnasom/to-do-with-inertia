@@ -1,5 +1,6 @@
 import {Cell, Column, Row, Table, TableBody, TableHeader} from 'react-aria-components';
 import {faPenToSquare as fasPenToSquare} from '@fortawesome/free-solid-svg-icons';
+import {faTrashCan as fasTrashCan} from '@fortawesome/free-solid-svg-icons';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {router} from "@inertiajs/react";
 import Page from '../../components/Page';
@@ -40,6 +41,12 @@ export default function Index({products}){
                                     className='text-gray-500 hover:text-gray-800'
                                     onClick={()=>router.visit(`/products/${product.id}/edit`)}>
                                     <FontAwesomeIcon icon={fasPenToSquare}/>
+                                </button>
+
+                                <button
+                                    className='text-gray-500 hover:text-gray-800'
+                                    onClick={()=>router.delete(`/products/${product.id}/destroy`)}>
+                                    <FontAwesomeIcon icon={fasTrashCan} />
                                 </button>
 
                             </Cell>

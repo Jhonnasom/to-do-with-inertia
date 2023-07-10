@@ -55,6 +55,11 @@ class ProductController extends Controller
         return redirect()->action([static ::class,'index']);
     }
 
+    public function destroy(Product $product):RedirectResponse
+    {
+        $product->delete();
+        return redirect()->action([static ::class,'index']);
+    }
 
 
 }
